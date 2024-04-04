@@ -1,0 +1,779 @@
+*{ 
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #222;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+	list-style: none;
+}
+
+section {
+  padding: 80px 0;
+}
+
+.container {
+  max-width: 1400px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* HEADER */
+header{
+	background: white;
+	position: relative;
+	padding: 10px;
+	z-index: 888;
+}
+
+.header-flex{
+	height: 150px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	animation: slide-down 1s ease-in-out;
+}
+
+@keyframes slide-down {
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.kuljit-logo {
+  /* height: 150px; */
+  max-width: 350px;
+}
+
+.burger{
+	display: none;
+	cursor: pointer;
+	animation: fade-in 2s ease-in-out;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.menu-holder{
+	background: white;
+}
+
+.header-menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+.header-menu li{
+	/* border: 3px solid blue; */
+	list-style: none;
+}
+
+.header-menu li a{
+	/* border: 3px solid red; */
+	transition: .3s ease-in-out;
+}
+
+
+.order-now, .call-now {
+  display: inline-block;
+  background: tomato;
+  color: white;
+	font-weight: 600;
+  padding: 10px 15px;
+	transition: .3s ease-in-out;
+}
+
+.order-now:hover, 
+.call-now:hover {
+  background: #ff0000;
+	color: white;
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1200px){
+	.burger{
+		display: block;
+	}
+
+	.header-flex {
+		flex-direction: column;
+		justify-content: center;
+		gap: 20px;
+	}
+
+	.menu-holder{
+		position: absolute;
+		top: 100%;
+		right: 0;
+		padding: 20px;
+		width: 100%;
+		display: none;
+		box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	}
+
+	.header-menu{
+		display: block;
+		padding: 0;
+	}
+
+	.header-menu li a{
+		display: block;
+		text-align: center;
+		padding: 10px;
+		font-size: 20px;
+		margin-bottom: 5px;
+	}
+
+	.header-menu li a:hover{
+		background-color: #cccccc;
+	}
+}
+
+@media only screen and (min-width: 1201px){
+	.menu-holder{
+		display: block !important;
+	}
+}
+
+@media only screen and (max-width: 768px){
+	.kuljit-logo {
+		/* height: 150px; */
+		max-width: 250px;
+	}
+}
+
+
+/* HERO */
+.hero {
+  background: url(https://www.zuuchini.com/wp-content/uploads/20180203_173913.jpg) rgba(0, 0, 0, 0.2);
+  background-size: cover;
+  background-position: center;
+	background-blend-mode: overlay;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .textbox {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+	animation: fade-in 2s ease-in-out;
+	
+}
+
+
+.hero .textbox h1 {
+  margin-bottom: 20px;
+	font-size: 2.25em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+	
+}
+
+
+.hero .textbox p {
+  margin-bottom: 30px;
+	font-size: 1.2em;
+}
+
+.products-flex, .footer-flex {
+  display: flex;
+	flex-direction: column;
+  /* justify-content: space-between;
+  gap: 20px; */
+}
+
+/* CAROUSEL */
+.carousel {
+	padding: 100px 0;
+}
+
+.carousel h2 {
+	margin-bottom: 30px;
+	font-size: 2.25em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+/* .slider-holder {
+	border: 3px solid orange;
+} */
+
+.carousel .slick-list {
+	margin: 0 -10px;
+}
+
+.carousel .item {
+	/* border: 4px dashed green; */
+	margin: 0 10px;
+}
+
+/* .cards {
+	border: 4px solid purple;
+} */
+
+.card1 .img-holder {
+	background: url(https://i.imgur.com/jAgXUwh.jpg) rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.card2 .img-holder {
+	background: url(https://i.imgur.com/pYE9qUS.jpg) rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.card3 .img-holder {
+	background: url(https://media-cdn.tripadvisor.com/media/photo-s/26/b9/3b/aa/caption.jpg) rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.card4 .img-holder {
+	background: url(https://i.imgur.com/xcN9Be9.jpg) rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.card5 .img-holder {
+	background: url(https://i.imgur.com/6VfVUxt.jpg) rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.card6 .img-holder {
+	background: url(https://i.imgur.com/5NRlgL6.jpg)rgba(0,0,0,0.1);
+	background-position: center;
+	background-size: cover;
+	background-blend-mode: overlay;
+}
+
+.cards .img-holder {
+	color: white;
+	height: 350px;
+	padding: 0 15px 30px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.cards .textbox {
+	position: absolute;
+	max-width: 150px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+	animation: fade-in 2s ease-in-out;
+}
+
+.cards .textbox p {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.cards .textbox h3 {
+	text-transform: capitalize;
+	letter-spacing: .5px;
+}
+
+.cards .info-holder {
+	/* border: 2px solid red; */
+	background: white;
+	padding-top: 10px;
+}
+
+.cards .info-holder h4 {
+	margin-bottom: 10px;
+}
+
+.cards .info-holder p  {
+	font-weight: 700;
+}
+
+.cards .info-holder p span {
+	color: grey;
+	font-weight: 500;
+}
+
+.carousel .slick-arrow {
+	width: 50px;
+	height: 50px;
+	background: pink;
+	position: absolute;
+	right: 0;
+	top: 8px;
+	z-index: 1;
+	transform: translateX(50%);
+}
+
+.carousel .slick-arrow:before {
+	content: url(https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png);
+	display: block;
+	transform: translate(-50%,-50%) scale(0.05);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 1;
+}
+
+.carousel .slick-prev {
+	font-size: 0;
+	border: none;
+}
+
+.carousel .slick-next {
+	top: 64px;
+	left: 100%;
+	font-size: 0;
+	border: none;
+	transform: translateX(-50%) scaleX(-1);
+}
+
+
+.slick-dots {
+  display: flex;
+  justify-content: center; 
+  list-style: none; 
+  padding: 0;
+	font-size: 0;
+  margin-top: 20px; 
+}
+
+.slick-dots li {
+  margin: 0 5px; 
+}
+
+.slick-dots li button {
+  width: 15px; 
+  height: 15px;
+  border: none;
+  border-radius: 50%; 
+  background-color: #333; 
+  opacity: 0.5; 
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #000; 
+  opacity: 1; 
+}
+
+
+/* MENU */
+.menu {
+	background: tomato;
+}
+
+.menu .textbox {
+  padding: 40px;
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+	animation: fade-in 2s ease-in-out;
+}
+
+.menu .textbox h1 {
+	margin-bottom: 20px;
+	font-size: 2.25em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+.menu .textbox p {
+	font-size: 1.2em;
+}
+
+.gallery {
+	padding: 40px 0;
+}
+
+.grid-parent {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 30px;
+}
+
+.item {
+	height: 100%;
+	/* width: calc(100% / 3 - 30px); */
+}
+
+.item img {
+	width: 100%;
+}
+
+/* ABOUT */
+.banner-about {
+	background: url(https://cdn.usarestaurants.info/assets/uploads/320a7db5632333c3af9071cb18e209e1_-canada-quebec-communaute-urbaine-de-montreal-montreal-restaurant-kuljit-india-514-745-6975htm.jpg) rgba(0, 0, 0, 0.6);
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-about .textbox {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 40px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+	animation: fade-in 2s ease-in-out;
+}
+
+
+
+.banner-about .textbox h1 {
+  margin-bottom: 20px;
+	font-size: 2.25em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+.banner-about .textbox p {
+	font-size: 1.2em;
+}
+
+.about-flex {
+	display: flex;
+	gap: 20px;
+	/* border: 2px solid purple; */
+}
+
+.about-flex .left {
+	width: 50%;
+	/* border: 1px solid blue; */
+	animation: slide-right 1s ease-in-out;
+}
+
+@keyframes slide-right {
+	0% {
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.about-flex .right {
+	width: 50%;
+	/* border: 1px solid red; */
+	display: flex;
+	align-items: center;
+	animation: slide-left 1s ease-in-out;
+}
+
+@keyframes slide-left {
+	0% {
+		opacity: 0;
+		transform: translateX(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.about-flex .right .textbox {
+	min-width: 400px;
+	padding: 0 50px;
+}
+
+.about-flex .right .textbox h2 {
+	margin-bottom: 30px;
+	font-size: 2.5em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+.about-flex .right .textbox p {
+	margin-bottom: 30px;
+	font-size: 1.2em;
+}
+
+
+.about-flex .left .img-holder {
+	background: url(https://s3-media0.fl.yelpcdn.com/bphoto/aiK8UyuSglMR5_JRk0U-jg/348s.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 450px;
+}
+
+/* CONTACT */
+.contact-info {
+	text-align: center;
+	background-color: tomato;
+}
+
+.contact-info .textbox {
+	margin: 0;
+	padding: 0;
+	animation: fade-in 2s ease-in-out;
+}
+
+.contact-info h1 {
+	margin-bottom: 10px;
+	font-size: 2.25em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+.contact-info p {
+	font-size: 1.2em;
+}
+
+.contact-info .call-now {
+	background: black;
+	margin-top: 10px;
+}
+
+.contact-flex {
+	display: flex;
+	gap: 20px;
+	/* border: 2px solid purple; */
+}
+
+.contact-flex .left {
+	width: 50%;
+	/* border: 1px solid blue; */
+	animation: slide-right 1s ease-in-out;
+}
+
+
+
+.map-container {
+  height: 550px;
+  position: relative;
+}
+#map {
+  height: 100%;
+}
+
+.map-container button {
+  position: absolute;
+  bottom: 50px;
+  left: 35%;
+  /* transform: translate(-50%); */
+  background-color: #6495ed; 
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.map-container .gm-control-active.gm-fullscreen-control {
+	position: absolute;
+  left: 0;
+}
+
+.contact-flex .right {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* border: 1px solid red; */
+	animation: slide-left 1s ease-in-out;
+}
+
+
+.opening-hours {
+	/* border: 1px solid red; */
+	min-width: 400px;
+}
+.opening-hours h2 {
+	margin-bottom: 30px;
+	font-size: 2.5em;
+	font-weight: 900;
+	letter-spacing: .5px;
+	text-transform: capitalize;
+}
+
+/* FOOTER */
+footer {
+  /* text-align: center; */
+  background: black;
+  color: #fff;
+}
+
+.footer-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	align-items: center;
+  padding: 20px 0;
+	animation: slide-up 1s ease-in-out;
+}
+
+@keyframes slide-up {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.footer-flex .left,
+.footer-flex .middle,
+.footer-flex .right {
+  width: 100%; 
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+.footer-flex .left {
+  text-align: start;
+}
+
+.footer-flex .middle {
+	text-align: center;
+}
+
+.footer-flex .right {
+	text-align: end;
+}
+
+.footer-flex .right i {
+  margin-right: 10px;
+}
+
+footer .footer-logo {
+  width: 250px;
+}
+
+@media (max-width: 1200px) {
+	.hero .textbox h1,
+	.banner-about .textbox h1
+	.contact-info .textbox h1 {
+		font-size: 1.5em;
+	}
+	.carousel .container h2,
+	.menu h2,
+	.about-flex .right .textbox h2 {
+		font-size: 1.25em;
+	}
+	.hero .textbox p,
+	.banner-about .textbox p,
+	.about-flex .right .textbox p,
+	.contact-info .textbox p {
+		font-size: 1em;
+	}
+	.grid-parent {
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+	}
+	.menu .slick-list {
+		width: 65%;
+		margin: 0 auto;
+	}
+	.about-flex, .contact-flex {
+		flex-direction: column-reverse;
+		align-items: center;
+		text-align: center;
+		/* gap: 80px;  */
+	}
+	.about-flex .right {
+		margin-bottom: 60px;
+	}
+	.left, .right {
+		min-width: 400px;
+	}
+	/* .menu .slick-list {
+		margin: 0 150px;
+	} */
+
+	.footer-flex {
+    flex-direction: column; 
+  }
+  .footer-flex .left,
+  .footer-flex .middle,
+  .footer-flex .right {
+    margin: 0;
+		width: 100%;
+  }
+	.footer-flex .left {
+		text-align: center;
+		max-width: none;
+	}
+	.footer-flex .middle {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.footer-flex .right {
+		text-align: center;
+		max-width: none;
+	}
+}
+
+@media (max-width: 992px) {
+	.carousel .menu-slider .page {
+		min-height: 600px;
+	}
+}
+
+@media (max-width: 768px) {
+	.carousel .menu-slider .page {
+		min-height: 500px;
+	}
+}
+
+@media (max-width: 660px) {
+	.carousel .menu-slider .page {
+		min-height: 400px;
+	}
+}
+@media (max-width: 550px) {
+	.carousel .menu-slider .page {
+		min-height: 300px;
+	}
+}
+
